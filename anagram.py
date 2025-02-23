@@ -1,4 +1,5 @@
 from collections import Counter
+import requests
 
 # Checking the anagram
 def check_anagrams(word1, word2):
@@ -12,9 +13,20 @@ def find_anagrams(word, word_list):
     # Search for anagrams through the list
     return [i for i in word_list if Counter(i.lower()) == word_counter]
 
+# Downloading the dictionary from GitHub
+def word_list():
+    url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
+    response = requests.get(url)
+    if response.status_code == 200:
+        words = response.text.splitlines()
+        return words
+    else:
+        print(f"Failed to load words. Status code: {response.status_code}")
+        return []
+
 def main():
     word = input('Input word for search anagram: ')
-    words = ['part', 'trap', 'prat', 'rapt', 'tarp']
+    words = word_list()
 
     anagrams = find_anagrams(word, words)
 
