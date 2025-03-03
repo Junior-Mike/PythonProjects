@@ -28,4 +28,4 @@ def main(file_name):
     print(f"Number of unique words: {count_unique_words(text)}")
 
 if __name__ == "__main__":
-    main("D:\SB Python\Project python\Text Analyzer\sample.txt")
+    main("path to file")
