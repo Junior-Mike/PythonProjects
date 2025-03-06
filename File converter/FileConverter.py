@@ -28,9 +28,9 @@ def main():
     choice = input("Enter the operation number: ")
 
     if choice == "1":
-        txt_to_pdf("D:\SB Python\Project python\File Converter\example.txt", "D:\SB Python\Project python\File Converter\output.pdf")
+        txt_to_pdf("Path to txt", "Path to pdf")
     elif choice == "2":
-        csv_to_xlsx("D:\SB Python\Project python\File Converter\example.csv", "D:\SB Python\Project python\File Converter\output.xlsx")
+        csv_to_xlsx("Path to csv", "Path to xlsx")
     else:
         print("Wrong select")
 
